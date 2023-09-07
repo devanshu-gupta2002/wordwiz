@@ -3,9 +3,8 @@ import cors from "cors"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
 import questionRoutes from './routes/question.js'
-import { getQuestion, createQuestion } from "./controllers/question.js"
 import Question from "./models/questions.js"
-import rawData from "./database.js"
+import rawData from "./database/database.js"
 
 const app = express()
 dotenv.config();
@@ -32,7 +31,7 @@ app.get('/', (request, response) => {
 })
 
 
-app.use("/", questionRoutes)
+app.use("/api", questionRoutes)
 
 const PORT = process.env.PORT || 3001;
 mongoose
