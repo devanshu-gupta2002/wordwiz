@@ -1,9 +1,11 @@
 import {useState, useEffect} from "react"
 import axios from "axios"
+import questionServices from "../services/question.js"
 
 const QuestionDisplay = () => {
   const [questions, setQuestions] = useState([])
   const [answers, setAnswers] = useState([])
+  const [score, setScore] = useState(0)
 
   useEffect(() => {
     axios.get('/api/question')
@@ -14,18 +16,28 @@ const QuestionDisplay = () => {
         console.log("error fetching questions", err)
       })
     }, [])
-    // console.log(questions)
     
   const handleCheckboxChange = (questionId, optionId) => {
     const updatedAnswers = {...answers}
     updatedAnswers[questionId] = optionId
     setAnswers(updatedAnswers)
   }
-  console.log(answers)
+
+  const handleSubmit = () => {
+    let totalScore = 0
+    questions.forEach((question) => {
+      const correctOption = question.options.find((option) => option.isCorrect)
+      if(answers[question._id] === correctOption._id) {
+        totalScore+=1
+      }
+    })
+    setScore(totalScore)
+  }
 
   return (
-    <div>
-      <h1>Language Learning Quiz</h1>
+    <>
+    <div className=" flex p-8 items-center justify-center bg-blue-500 text-3xl">WordsWiz!</div>
+    <div className="min-h-screen flex items-center justify-center bg-white">
       <div>
         {questions.map((question) => (
           <div key={question._id}>
@@ -42,10 +54,16 @@ const QuestionDisplay = () => {
               </li>
             ))}
             </ul>
+            
           </div>
         ))}
+        <button onClick={handleSubmit} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
+          Submit Answers
+            </button>
+            {score ? <>{score}</> : <></>}
       </div>
     </div>
+    </>
   )
 }
 
