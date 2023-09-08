@@ -1,0 +1,26 @@
+POST http://localhost:3001/auth/register
+Content-Type: application/json
+
+{
+    "username": "tester",
+    "email": "test@gmail.com",
+    "password": "password"
+}
+###
+POST http://localhost:3001/auth/login
+Content-Type: application/json
+
+{
+    "email": "devanshuguptaknp@gmail.com",
+    "password": "passwor"
+}
+
+###
+POST http://localhost:3001/auth/login
+Content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "password"
+}
+

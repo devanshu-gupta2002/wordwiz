@@ -3,6 +3,7 @@ import cors from "cors"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
 import questionRoutes from './routes/question.js'
+import authRoutes from "./routes/auth.js"
 import Question from "./models/questions.js"
 import rawData from "./database/database.js"
 
@@ -32,6 +33,7 @@ app.get('/', (request, response) => {
 
 
 app.use("/api", questionRoutes)
+app.use("/auth", authRoutes)
 
 const PORT = process.env.PORT || 3001;
 mongoose
