@@ -24,12 +24,4 @@ Content-Type: application/json
     "password": "password"
 }
 
-###
-PUT http://localhost:3001/home/64fb622b81e520a1636872de
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZmI2MjJiODFlNTIwYTE2MzY4NzJkZSIsImlhdCI6MTY5NDIwNzU4OH0.hyWZU1h1lWX_je-9dz8cO4QJh2Q8UDQ6Gq8fAGKI5dA
-
-{
-    "score": 2
-}
 

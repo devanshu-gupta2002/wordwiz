@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react"
-import axios from "axios"
 import questionServices from "../services/question.js"
+import { useSelector } from "react-redux"
 
 const QuestionDisplay = () => {
   const [questions, setQuestions] = useState([])
@@ -8,14 +8,26 @@ const QuestionDisplay = () => {
   const [score, setScore] = useState(0)
 
   useEffect(() => {
-    axios.get('/api/question')
+    questionServices.getAll()
       .then((response) => {
-        setQuestions(response.data)
+        setQuestions(response)
       })
       .catch((err) => {
         console.log("error fetching questions", err)
       })
     }, [])
+
+    // useSelector(state => {
+    //   questionServices
+    //     .getAll(state.auth.token)
+    //     .then((response) => {
+    //       // console.log(response)
+    //       setQuestions(response)
+    //     })
+    //     .catch((err) => {
+    //       console.log("error fetching questions", err)
+    //     })
+    // })
     
   const handleCheckboxChange = (questionId, optionId) => {
     const updatedAnswers = {...answers}
@@ -33,6 +45,8 @@ const QuestionDisplay = () => {
     })
     setScore(totalScore)
   }
+
+  // console.log(questions)
 
   return (
     <>

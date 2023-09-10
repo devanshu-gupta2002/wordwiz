@@ -1,11 +1,22 @@
 import axios from "axios";
 
-const baseUrl = "/api"
+const baseUrl = "http://localhost:3001/api"
 
-const getAll = () => {
-  const request = axios.get(`${baseUrl}/question`)
-  return request.then(response => response.data)
+let token = null
+
+const setToken = newToken => {
+  token = `Bearer ${newToken}`
 }
 
-const exported = {getAll}
+const getAll = async() => {
+  const config = {
+    headers: { Authorization: token }
+  }
+  // console.log(authToken)
+  const response = await axios.get(`${baseUrl}/question`, config)
+  // console.log(response)
+  return response.data
+}
+
+const exported = {getAll, setToken}
 export default exported
