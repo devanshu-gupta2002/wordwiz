@@ -1,7 +1,7 @@
 // import {useSelector} from "react-redux"
 import {useNavigate} from "react-router-dom"
 import { useEffect, useState } from "react"
-// import userServices from "../services/"
+import userServices from "../services/user.js"
 import { setLogout } from "../reducers/authReducer"
 
 const HomePage = () => {
@@ -9,18 +9,22 @@ const HomePage = () => {
   // console.log(state)
   const navigate = useNavigate()
   const [username, setUsername] = useState("")
+  const [users, setUsers] = useState([])
   
   useEffect(() => {
     const loggedUserData = window.localStorage.getItem("localSavedUserData")
     if(loggedUserData){
       const loggedIn = JSON.parse(loggedUserData)
-      // console.log("loggedin", loggedIn)
       setUsername(loggedIn.user.username)
+      userServices.setToken(loggedIn.token)
+      userServices.getAll().then((response) => setUsers(response))
     }
     else {
       navigate("/")
     }
   }, [])
+  // console.log(users)
+  const sortedUsers = users.sort((a, b) => b.score - a.score)
 
   const logOut = () => {
     console.log("logOut")
@@ -113,17 +117,14 @@ const HomePage = () => {
             <div className="text-white">Score</div>
           </div>
 
-          {/* <!-- Sample Leaderboard Rows */}
-          <div className="grid grid-cols-3 p-2">
-            <div className="text-center">1</div>
-            <div>John Doe</div>
-            <div>95</div>
-          </div>
-          <div className="grid grid-cols-3 p-2">
-            <div className="text-center">2</div>
-            <div>Jane Smith</div>
-            <div>89</div>
-          </div>
+          {/* <!--Leaderboard Rows */}
+          {sortedUsers.map((user, index) => (
+        <div key={user._id} className="grid grid-cols-3 p-2 border-b">
+          <div className="text-center">{index + 1}</div>
+          <div>{user.username}</div>
+          <div>{user.score}</div>
+        </div>
+      ))}
         </div>
         </div>
         </div>

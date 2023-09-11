@@ -21,5 +21,5 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZmYzNzYyMGRmZTJlMzQzY2NmOGIzNCIsImlhdCI6MTY5NDQ0NzY1N30.Pzc36_8PLzD8rNS9uul4Iz8vwG1MevLlL23Vo0_oHTs
 
 {
-    "score": 7
+    "score": 15
 }
