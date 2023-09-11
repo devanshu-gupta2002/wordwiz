@@ -18,5 +18,6 @@ const getAll = async() => {
   return response.data
 }
 
+
 const exported = {getAll, setToken}
 export default exported

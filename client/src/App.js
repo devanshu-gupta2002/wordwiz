@@ -3,24 +3,27 @@ import AuthPage from "./components/Login";
 import HomePage from "./components/Home";
 import {
   BrowserRouter as Router,
-  Routes, Route, Link
+  Routes, Route,
 } from "react-router-dom"
-import questionService from "./services/question.js"
-import { useSelector } from "react-redux";
-import { useEffect } from "react";
+// import { useEffect } from "react";
+// import { useDispatch } from "react-redux";
+// import { setLogin } from "./reducers/authReducer";
 
 const App = () => {
-  useEffect(() => {
-    const loggedUserData = window.localStorage.getItem('localSavedUserData')
-    if(loggedUserData){
-      const user = JSON.parse(loggedUserData)
-      console.log(user)
-      questionService.setToken(user.token)
-    }
-  }, [])
-  // console.log("state", state)
+  // const dispatch = useDispatch()
 
-  
+  // useEffect(() => {
+  //   const loggedUserData = window.localStorage.getItem("localSavedUserData")
+  //   if(loggedUserData){
+  //     const loggedIn = JSON.parse(loggedUserData)
+  //     dispatch(
+  //       setLogin({
+  //         user: loggedIn.user,
+  //         token: loggedIn.token,
+  //       })
+  //     )
+  //   }
+  // })
 
 
   return (
@@ -31,7 +34,6 @@ const App = () => {
         <Route path="/question" element={<QuestionDisplay />} />
       </Routes>
     </Router>
-      // <QuestionDisplay />
   );
 }
 
