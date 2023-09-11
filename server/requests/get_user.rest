@@ -1,2 +1,7 @@
 GET http://localhost:3001/home
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZmYzNzYyMGRmZTJlMzQzY2NmOGIzNCIsImlhdCI6MTY5NDQ0NzQ5MX0.-4Va-Bb90YXB-ipJgF1FYUMqLestFQ2avjxtCIHRjWA
+
+
+###
+GET http://localhost:3001/home/64fb5930f89ad0b46eae9d08
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZmYzNzYyMGRmZTJlMzQzY2NmOGIzNCIsImlhdCI6MTY5NDQ0NzQ5MX0.-4Va-Bb90YXB-ipJgF1FYUMqLestFQ2avjxtCIHRjWA

@@ -32,16 +32,17 @@ const AuthPage = () => {
     }
   
     return (
-      <div className="h-screen flex items-center bg-gray-600">
+      <div className="h-screen flex items-center bg-[#1f2937]">
         <div className=" w-1/2 mx-auto"> 
         <div className="relative flex flex-col items-center rounded-xl bg-white bg-clip-border text-gray-700 shadow-none py-10 ">
+        <div className="font-extrabold font-mono mb-10 text-[#ec4899] tracking-tight text-7xl bg-clip-text  mx-4">WordWiz!</div>
           <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
             Sign Up
           </h4>
           <p className="mt-1 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
             Enter your details to register.
           </p>
-          <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
+          <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96" autoComplete="off">
             <div className="mb-4 flex flex-col gap-6">
               <div className="relative h-11 w-full min-w-[200px]">
                 <input
@@ -135,16 +136,17 @@ const AuthPage = () => {
     }
 
     return (
-      <div className="h-screen flex items-center bg-gray-600">
+      <div className="h-screen flex items-center bg-[#1f2937]">
         <div className=" w-1/2 mx-auto"> 
         <div className="relative flex flex-col items-center rounded-xl bg-white bg-clip-border text-gray-700 shadow-none py-10 ">
+        <div className="font-extrabold font-mono mb-10 text-[#ec4899] tracking-tight text-7xl bg-clip-text  mx-4">WordWiz!</div>
           <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
             Log In
           </h4>
           <p className="mt-1 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
             Enter your details to login.
           </p>
-          <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
+          <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96" autoComplete="off">
             <div className="mb-4 flex flex-col gap-6">
               <div className="relative h-11 w-full min-w-[200px]">
                 <input

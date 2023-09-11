@@ -22,7 +22,7 @@ const HomePage = () => {
     else {
       navigate("/")
     }
-  }, [])
+  }, [navigate])
   // console.log(users)
   const sortedUsers = users.sort((a, b) => b.score - a.score)
 
@@ -31,6 +31,13 @@ const HomePage = () => {
     setLogout()
     window.localStorage.clear()
     navigate("/")
+  }
+
+  const ranking = (index) => {
+    if(index===0) return ("🥇")
+    else if(index===1) return ("🥈")
+    else if(index===2) return ("🥉")
+    else return(index+1) 
   }
 
   return(
@@ -103,7 +110,7 @@ const HomePage = () => {
         {/* LeaderBoard  */}
         <div className="basis-1/5 bg-[#1f2937] h-screen">
         <div className="bg-[#ec4899] text-white py-4 px-6">
-        <h1 className="text-2xl font-semibold">Leaderboard</h1>
+        <h1 className="text-2xl font-semibold">Leaderboard 👑</h1>
       </div>
 
       {/* <!-- Leaderboard Content --> */}
@@ -120,7 +127,7 @@ const HomePage = () => {
           {/* <!--Leaderboard Rows */}
           {sortedUsers.map((user, index) => (
         <div key={user._id} className="grid grid-cols-3 p-2 border-b">
-          <div className="text-center">{index + 1}</div>
+          <div className="text-center font-mono">{ranking(index)}</div>
           <div>{user.username}</div>
           <div>{user.score}</div>
         </div>

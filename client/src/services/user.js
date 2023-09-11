@@ -16,6 +16,14 @@ const getAll = async() => {
   return response.data
 }
 
+const getScore = async(userId) => {
+  const config = {
+    headers: { Authorization: token }
+  }
+  const response = await axios.get(`${baseUrl}/${userId}`, config)
+  return response.data
+}
+
 const updateScore = async(userId, newData) => {
   const config = {
     headers: { Authorization: token }
@@ -23,10 +31,10 @@ const updateScore = async(userId, newData) => {
   const score = {
     score: newData
   }
-  const response = await axios.post(`${baseUrl}/${userId}`, config, score)
+  const response = await axios.put(`${baseUrl}/${userId}`, score, config)
   return response.data
 }
 
 
-const exported = {getAll, setToken, updateScore}
+const exported = {getAll, setToken, updateScore, getScore}
 export default exported

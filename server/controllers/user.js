@@ -25,3 +25,18 @@ export const getUser = async(req, res) => {
     res.status(404).json({message: err.message})
   }
 }
+
+export const getScore = async(req, res) => {
+  try {
+    const userId = req.params.userId
+    const user = await User.findById(userId)
+    const score = user.score
+
+    if(!user) {
+      return res.status(404).json({message: "user not found"})
+    }
+    res.status(201).json({score: score})
+  } catch (err) {
+    res.status(404).json({error: err.message})
+  }
+}
