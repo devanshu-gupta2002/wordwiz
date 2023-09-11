@@ -1,10 +1,12 @@
 import {useState, useEffect} from "react"
 import questionServices from "../services/question.js"
+import { useNavigate } from "react-router-dom"
 
 const QuestionDisplay = () => {
   const [questions, setQuestions] = useState([])
   const [answers, setAnswers] = useState([])
   const [score, setScore] = useState(0)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const loggedUserData = window.localStorage.getItem('localSavedUserData')
@@ -14,6 +16,9 @@ const QuestionDisplay = () => {
       questionServices.setToken(user.token)
       questionServices.getAll().then((response) => setQuestions(response))
       }
+    else {
+      navigate("/")
+    }
     }, [])
 
     // useSelector(state => {

@@ -14,3 +14,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZmI1OTMwZ
 {
     "score": 10
 }
+
+###
+PUT http://localhost:3001/home/64ff37620dfe2e343ccf8b34
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZmYzNzYyMGRmZTJlMzQzY2NmOGIzNCIsImlhdCI6MTY5NDQ0NzY1N30.Pzc36_8PLzD8rNS9uul4Iz8vwG1MevLlL23Vo0_oHTs
+
+{
+    "score": 7
+}

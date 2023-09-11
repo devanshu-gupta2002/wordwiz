@@ -17,6 +17,9 @@ const HomePage = () => {
       // console.log("loggedin", loggedIn)
       setUsername(loggedIn.user.username)
     }
+    else {
+      navigate("/")
+    }
   }, [])
 
   const logOut = () => {
