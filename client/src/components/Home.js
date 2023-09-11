@@ -17,7 +17,7 @@ const HomePage = () => {
       // console.log("loggedin", loggedIn)
       setUsername(loggedIn.user.username)
     }
-  })
+  }, [])
 
   const logOut = () => {
     console.log("logOut")
@@ -30,9 +30,9 @@ const HomePage = () => {
     <div className="flex flex-col min-h-screen max-h-fit bg-[#566375] overflow-auto">
       {/* header  */}
       <div className=" flex h-40 bg-[#1f2937] w-full items-center justify-between ">
-        <div className="font-extrabold font-mono text-[#ec4899] text-8xl bg-clip-text  mx-4">WordWiz!</div>
+        <div className="font-extrabold font-mono text-[#ec4899] tracking-tight text-8xl bg-clip-text  mx-4">WordWiz!</div>
         <div className="flex items-center space-x-4 mr-4 flex-col">
-      <span className="text-white">Welcome, {username}</span>
+      <span className="text-white">Welcome, <span className=" font-mono font-bold text-[#ec4899]">{username}</span></span>
       <div className="p-2">
       <button className="text-white border border-white rounded px-2 py-1 hover:bg-white hover:text-[#1f2937]"
         onClick={logOut}>Logout</button>
