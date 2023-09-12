@@ -3,7 +3,7 @@ import questionServices from "../services/question.js"
 import userServices from "../services/user.js"
 import { useNavigate } from "react-router-dom"
 
-const QuestionDisplay = () => {
+const FrenchQuestion = () => {
   const [questions, setQuestions] = useState([])
   const [answers, setAnswers] = useState([])
   const [score, setScore] = useState(0)
@@ -20,7 +20,7 @@ const QuestionDisplay = () => {
       questionServices.setToken(user.token)
       userServices.setToken(user.token)
       userServices.getScore(user.user._id).then(response => setCurrentScore(response))
-      questionServices.getAll().then((response) => setQuestions(response.filter((question) => question.language === "English")))
+      questionServices.getAll().then((response) => setQuestions(response.filter((question) => question.language === "French")))
       }
     else {
       navigate("/")
@@ -89,4 +89,4 @@ const QuestionDisplay = () => {
   )
 }
 
-export default QuestionDisplay
+export default FrenchQuestion

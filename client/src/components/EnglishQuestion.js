@@ -3,7 +3,7 @@ import questionServices from "../services/question.js"
 import userServices from "../services/user.js"
 import { useNavigate } from "react-router-dom"
 
-const QuestionDisplay = () => {
+const EnglishQuestion = () => {
   const [questions, setQuestions] = useState([])
   const [answers, setAnswers] = useState([])
   const [score, setScore] = useState(0)
@@ -89,4 +89,4 @@ const QuestionDisplay = () => {
   )
 }
 
-export default QuestionDisplay
+export default EnglishQuestion

@@ -60,7 +60,7 @@ const HomePage = () => {
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">English</h5>
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Ready to test your English grammar skills? Dive in and challenge yourself now!</p>
               <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#ec4899] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
-                onClick={() => navigate("/question")}>
+                onClick={() => navigate("/question/english")}>
                   Start Test
                   <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                       <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -70,10 +70,10 @@ const HomePage = () => {
         </div>
         <div className="basis-1/5 p-4">
         <div className="max-w-sm p-6 bg-gray-800 border-gray-700 rounded-lg shadow">
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Dutch</h5>
-              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Ready to test your Dutch grammar skills? Dive in and challenge yourself now!</p>
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">French</h5>
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Ready to test your French grammar skills? Dive in and challenge yourself now!</p>
               <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#ec4899] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
-                onClick={() => navigate("/question")}>
+                onClick={() => navigate("/question/french")}>
                   Start Test
                   <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                       <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -86,7 +86,7 @@ const HomePage = () => {
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Spanish</h5>
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Ready to test your Spanish grammar skills? Dive in and challenge yourself now!</p>
               <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#ec4899] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
-                onClick={() => navigate("/question")}>
+                onClick={() => navigate("/question/spanish")}>
                   Start Test
                   <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                       <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -99,7 +99,7 @@ const HomePage = () => {
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">German</h5>
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Ready to test your German grammar skills? Dive in and challenge yourself now!</p>
               <button className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#ec4899] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 "
-                onClick={() => navigate("/question")}>
+                onClick={() => navigate("/question/german")}>
                   Start Test
                   <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                       <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
