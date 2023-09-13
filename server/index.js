@@ -5,6 +5,7 @@ import mongoose from "mongoose"
 import questionRoutes from './routes/question.js'
 import authRoutes from "./routes/auth.js"
 import userRoutes from "./routes/user.js"
+import errorHandler from "./middleware/error.js"
 import Question from "./models/questions.js"
 import rawData from "./database/database.js"
 
@@ -24,6 +25,7 @@ const unknownEndpoint = (request, response) => {
 app.use(cors())
 app.use(express.json())
 app.use(requestLogger)
+app.use(errorHandler)
 
 //ROUTES
 

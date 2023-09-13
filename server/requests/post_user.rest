@@ -2,9 +2,9 @@ POST http://localhost:3001/auth/register
 Content-Type: application/json
 
 {
-    "username": "Kanishk",
-    "email": "Kanishk@gmail.com",
-    "password": "password"
+    "username": "dev",
+    "email": "devanshuguptaknp@gmail.com",
+    "password": "passs"
 }
 ###
 POST http://localhost:3001/auth/login

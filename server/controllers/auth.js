@@ -9,6 +9,16 @@ export const register = async(req, res) => {
       email,
       password,
     } = req.body
+    if(password.length<4){
+      response.status(400).json({ error: "Password length must be greater than 3"})
+    }
+    if(username.length===0){
+      response.status(400).json({ error: "Password length must be greater than 3"})
+    }
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+    if(!emailPattern.test(email)) {
+      response.status(400).json({ error: "Invalid Email"})
+    }
 
     const salt = await bcrypt.genSalt()
     const passwordHash = await bcrypt.hash(password, salt)

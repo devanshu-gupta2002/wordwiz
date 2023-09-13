@@ -1,4 +1,3 @@
-import QuestionDisplay from "./components/QuestionDisplay";
 import EnglishQuestion from "./components/EnglishQuestion";
 import GermanQuestion from "./components/GermanQuestion";
 import FrenchQuestion from "./components/FrenchQuestion";

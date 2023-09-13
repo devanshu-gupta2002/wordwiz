@@ -5,6 +5,7 @@ import loginServices from "../services/login.js"
 import questionsService from "../services/question.js"
 import { useNavigate } from "react-router-dom";
 
+
 const AuthPage = () => {
   const [isLogin, setLoginPage] = useState(true)
   const dispath = useDispatch()
@@ -22,8 +23,13 @@ const AuthPage = () => {
         email: email,
         password: password,
       }
-      loginServices.register(credentials)
-      setLoginPage(true)
+      const registeredUser = loginServices.register(credentials)
+      if(registeredUser.error) {
+        window.location.reload()
+        setLoginPage(false)
+      } else {
+        setLoginPage(true)
+      }
     }
   
     const changeRegister = (e) => {
@@ -117,17 +123,23 @@ const AuthPage = () => {
         password: password,
       }
       const loggedIn = await loginServices.login(credentials)
-      if(loggedIn) {
+      if(loggedIn.error) {
+        // console.log("error", loggedIn.error)
+        setEmail("")
+        setPassword("")
+      }
+      if(!loggedIn.error) {
         dispath(
           setLogin({
             user: loggedIn.user,
             token: loggedIn.token
           })
         )
-      }
+      
       window.localStorage.setItem('localSavedUserData', JSON.stringify(loggedIn))
       questionsService.setToken(loggedIn.token)
       navigate("/home")
+        }
     }
   
     const changeRegister = (e) => {
