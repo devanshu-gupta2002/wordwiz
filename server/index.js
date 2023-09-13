@@ -29,12 +29,6 @@ app.use(errorHandler)
 
 //ROUTES
 
-app.get('/', (request, response) => {
-  response.send(`<p>hello world</p>`)
-  // response.send(rawData[0])
-})
-
-
 app.use("/api", questionRoutes)
 app.use("/auth", authRoutes)
 app.use("/home", userRoutes)
