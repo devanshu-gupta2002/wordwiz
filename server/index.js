@@ -34,7 +34,7 @@ app.use("/api", questionRoutes)
 app.use("/auth", authRoutes)
 app.use("/home", userRoutes)
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 mongoose
 	.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
