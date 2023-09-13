@@ -6,8 +6,8 @@ import questionRoutes from './routes/question.js'
 import authRoutes from "./routes/auth.js"
 import userRoutes from "./routes/user.js"
 import errorHandler from "./middleware/error.js"
-import Question from "./models/questions.js"
-import rawData from "./database/database.js"
+// import Question from "./models/questions.js"
+// import rawData from "./database/database.js"
 
 const app = express()
 dotenv.config();
